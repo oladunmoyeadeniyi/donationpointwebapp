@@ -1,0 +1,68 @@
+#employmentInformation ul li {
+    list-style: none;
+}
+
+/* THE CARD DONOR INFORMATION STYLE */
+#cardDonorInformation {
+    text-align: left;
+}
+#cardDonorInformation main input[type="text"],
+#cardDonorInformation main input[type="tel"] {
+    width: 186px;
+    height: 22px;   
+    border: 0.5px solid #C5C9D5;
+    border-radius: 8px;
+    padding: 9px 9px 9px 16px;
+    margin: 12px 8px;
+}
+#cardDonorInformation main input.big {
+    width: 398px;
+    height: 22px;   
+    border: 0.5px solid #C5C9D5;
+    border-radius: 8px;
+    padding: 9px 9px 9px 16px;
+    margin: 0px auto;
+}
+#cardDonorInformation main select#country {
+    width: 211px;
+    height: 40px;
+    border: 0.5px solid #C5C9D5;
+    border-radius: 8px;
+    margin: 12px 8px;
+    padding-left: 16px;
+}
+#cardDonorInformation main p {
+    font-size: 14px;
+    line-height: 18px;
+    color: #0D152E;
+    margin: 24px 0px 0px 2px;
+}
+#cardDonorInformation main input[type="radio"]{
+    margin-right: 4px;
+    margin-left: 4px;
+    margin: auto 4px;
+    width: 16px;
+    height: 16px;
+}
+#cardDonorInformation main .yes, #cardDonorInformation form .no {
+    margin-right: 43px;
+    /* margin-top: 8px; */
+}
+#cardDonorInformation main .subscriptionBox {
+    width: 396px;
+    height: 36px;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+#cardDonorInformation main .subscriptionBox input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    padding: auto 0px;
+}
+#cardDonorInformation main .subscriptionBox label {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #0D152E;
+}

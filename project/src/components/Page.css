@@ -1,0 +1,280 @@
+/* THE HEADER STYLES  */
+
+/* TOP  */
+.hearder_top {
+    background: inherit;
+    height: 64px;
+    width: 1440px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 32px;
+    margin: 0 auto;
+}
+.hearder_top span {
+    align-items: center;
+    padding: 6px 16px 6px 8px;
+    width: 182px;
+    height: 36px;
+    background: #FEFEFF;
+    border: 0.5px solid #EDF2F7;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #6B6F7D;
+}
+.hearder_top #campaignName {
+    width: 207px;
+    height: 24px;
+    left: 617px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: #0D2770;
+}
+.hearder_top .publishBtn {
+    align-items: center;
+    padding: 6px 12px 6px 7px;
+    width: 92px;
+    height: 36px;
+    background: #EA5606;
+    border: none;
+    border-radius: 8px;
+    margin: 24px;
+}
+.hearder_top input {
+    align-items: center;
+    padding: 8px 12px;
+    width: 134px;
+    height: 36px;
+    border: 0.5px solid #C5C9D5;
+    border-radius: 8px;
+}
+
+/* DOWN */
+.header_down {
+    height: 74px;
+    width: 1440px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 auto;
+
+    /* padding: 0 32px 0 158px; */
+}
+.header_down form {
+    width: 635px;
+    height: 42px;
+    display: flex;
+    justify-content: space-around;
+}
+.header_down form div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+.header_down form div label {
+    width: 112px;
+    height: 16px;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    color: #9B9EA9;
+}
+.header_down form div label:last-child {
+    width: 137px;
+    height: 16px;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+}
+.header_down form span {
+    height: 0px;
+    width: 136px;
+    border: 0.5px solid #C5C9D5;
+    margin: 0 -70px;
+    align-items: center;
+    margin-top: 5px;
+}
+.widget {
+    width: 154px;
+    height: 19px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #0D152E;
+}
+.embed button {
+    width: 173px;
+    height: 36px;
+    border: 0.5px solid #082D94;
+    border-radius: 8px;
+}
+
+/* THE PAGE BODY */
+.pageBody {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 33px;
+}
+
+/* THE LEFT SIDE CARD */
+#leftCard .body {
+    height: fit-content;
+    min-height: 466px;
+    width: 810px;
+    min-width: 810px;
+    max-width: 810px;
+    background: #FFFFFF;
+    box-shadow: -1px 1px 0px rgba(0, 0, 0, 0.1), 1px -1px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 16px 16px 0px 0px;
+    padding: 24px;
+}
+#leftCard .nextPage {
+    height: 64px;
+    width: 858px;
+    height: 64px;
+    background: #FAFCFE;
+    border-radius: 0px 0px 16px 16px;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1), 1px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+#leftCard .nextPage input {
+    margin: 14px 0px;
+    padding: 8px 12px;
+    width: 287px;
+    height: 36px;
+    background: #EA5606;
+    border-radius: 8px;
+    border: none;
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+}
+
+/* THE RIGHT SIDE CARD */
+#rightCard {
+    width: 486px;
+    min-width: 486px;
+    height: fit-content;
+    min-height: 394px;
+    background: #FFFFFF;
+    box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.1), 1px -1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    padding-bottom: 24px;
+}
+#rightCard .card-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 436px;
+    height: 22px;
+    background: #6A2776;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    padding: 25px;
+}
+#rightCard .card-header h2 {
+    width: 190px;
+    min-height: 22px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+#rightCard .card-header input[type="radio"] {
+    width: 22px;
+    height: 22px;
+    background: #6A2776;
+    margin: 0px 8px;
+}
+#rightCard .body-content {
+    margin: 24px;
+
+}
+#rightCard .body {
+    margin-bottom: 40px;
+}
+#rightCard .next input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 12px;
+    width: 438px;
+    height: 36px;
+    background: #6A2776;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+#rightCard .footText p {
+    width: 386px;
+    height: 48px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    color: #6B6F7D;
+    margin: 34px 36px 0px 26px;
+}
+
+
+/* THE DONATION PROGRESS BAR CARD */
+.donationBar {
+    width: 414px;
+    height: 24px;
+    background: #FFFFFF;
+    box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.1), 1px -1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    border: none;
+    margin-bottom: 22px;
+    padding: 36px;
+    position: relative;
+}
+.donationBar .donationUpdateCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.donationBar progress {
+    position: absolute;
+    width: 486px;
+    height: 24px;
+    left: 0px;
+    top: 0px;
+    margin: 0%;
+    border: none;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    overflow: hidden;
+    background-color: none;
+    background: none;
+    background-image: none;
+
+}
+progress::-webkit-progress-value {
+    background: #08AD5E;
+}
+.donationBar progress[value]::-webkit-progress-bar {
+    background-color: #F7FFFB;
+}
+
+.donationUpdateCard input {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #0E1B43;
+    border: none;
+    background: #FFFFFF;
+}
+
