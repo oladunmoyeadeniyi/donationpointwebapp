@@ -1,23 +1,9 @@
 import React, { Component } from 'react'
+import HigherOrderComponent from '../components/HOComponent'
 
 class DonorPreferences extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-             period: "Quarterly",
-             currency: "USD Dollar",
-             actionMessage: "Donor service for iftar charity"
-        }
-        this.inputing = this.inputing.bind(this)
-    }
-    inputing=(e)=>{
-        this.setState({
-            [e.target.name]: e.target.value,
-        });
-    };
-    
     render() {
-        const {period,currency,actionMessage} = this.state
+        const {period,currency,actionMessage,inputing} = this.props
         return (
             <div id="donorPreferences">
                 <p className="title">DONOR PREFERENCES</p>
@@ -36,7 +22,7 @@ class DonorPreferences extends Component {
                                 </div>
                                 <div className="column defaultSelection">
                                     <p>Set Default Selection</p>
-                                    <select name="period" value={period} onChange={this.inputing}>
+                                    <select name="period" value={period} onChange={inputing}>
                                         <option>Quaterly</option>
                                         <option>One time</option>
                                     </select>
@@ -45,7 +31,7 @@ class DonorPreferences extends Component {
                             <div className="row">
                                 <div className="donationCurrency">
                                     <p>Set Donation Currency</p>
-                                    <select name="currency" value={currency} onChange={this.inputing}>
+                                    <select name="currency" value={currency} onChange={inputing}>
                                         <option>USD Dollar</option>
                                         <option>NGN</option>
                                         <option>EURO</option>
@@ -68,7 +54,7 @@ class DonorPreferences extends Component {
                             </div>
                             <div className="column actionMessage">
                                 <p>Call to action message</p>
-                                <textarea type="text" name="actionMessage" value={actionMessage} onChange={this.inputing}/>
+                                <textarea type="text" name="actionMessage" value={actionMessage} onChange={inputing}/>
                             </div>
                         </div>
                     </main>
@@ -78,4 +64,4 @@ class DonorPreferences extends Component {
     }
 }
 
-export default DonorPreferences
+export default HigherOrderComponent(DonorPreferences)

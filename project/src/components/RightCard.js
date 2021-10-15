@@ -1,25 +1,26 @@
 import React, { Component } from 'react'
+import HigherOrderComponent from './HOComponent'
 import '../amountInformation/AmountInformation.css'
 import '../donorInformation/DonorInformation.css'
-// import CardAmountInformation from '../amountInformation/CardAmoutInformation'
+import CardAmountInformation from '../amountInformation/CardAmoutInformation'
 import CardDonorInformation from '../donorInformation/CardDonorInformation'
 
 class RightCard extends Component {
-    constructor(props) {
-        super(props)
+    // constructor(props) {
+    //     super(props)
     
-        this.state = {
-             next: "Next"
-        }
-    };
-    formSubmmit(e){
-        e.preventDefault();
-    };
+    //     this.state = {
+    //          next: "Next"
+    //     }
+    // };
+    // formSubmmit(e){
+    //     e.preventDefault();
+    // };
     
     render() {
-        const {next} = this.state
+        const {next,formSubmmit} = this.props
         return (
-            <form onSubmit={this.formSubmmit}>
+            <form onSubmit={formSubmmit}>
                 <div id="rightCard">
                     <div className="card-header">
                         <h2>Amount information</h2>
@@ -32,19 +33,18 @@ class RightCard extends Component {
                     </div>
                     <div className="body-content">
                         <div className="body">
-                            {/* <CardAmountInformation/> */}
-                            <CardDonorInformation/>
+                            <CardAmountInformation/>
+                            {/* <CardDonorInformation/> */}
 
                         </div>
                         <div className="next">
                             {
                                 <input type="submit" name="next" value={next}/>
-                                // <input type="button" defaultValue="Donate"/>
-                                // <input type="button" defaultValue="Complete"/>
                             }
                         </div>
                         <div className="footText">
-                            <p>`The information provided by [business entity name] (“we,” “us” or “our”) on [website name] (the “Site”) [and our mobile application] is for general informational purposes only. `</p>
+                            <p>`The information provided by [business entity name] (“we,” “us” or “our”) on [website name] (the “Site”) 
+                                [and our mobile application] is for general informational purposes only. `</p>
                         </div>
                     </div>
                 </div>
@@ -53,4 +53,4 @@ class RightCard extends Component {
     }
 }
 
-export default RightCard
+export default HigherOrderComponent(RightCard)

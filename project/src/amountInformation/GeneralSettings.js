@@ -1,43 +1,9 @@
 import React, { Component } from 'react'
+import HigherOrderComponent from '../components/HOComponent';
 
 class GeneralSettings extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-             campaignName: "",
-             language: "English",
-             goalAmount: 290,
-             colorPalette: "#6A2776",
-             logoFile: "",
-             slogan: "",
-        }
-        this.inputing = this.inputing.bind(this)
-    }
-    inputing=(e)=>{
-        this.setState({
-            [e.target.name]: e.target.value,
-        });
-    };
     render() {
-        const {campaignName,language,goalAmount,colorPalette,logoFile,slogan} = this.state
-
-        function uploadLogo(input) {
-            input = document.querySelector("#logo")
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                    let logo = document.querySelector("#logoDisplay");
-                    logo.setAttribute('src', e.target.result);
-                    let logoStyle = {display: "flex", width: "inherit", height: "inherit"};
-                    Object.assign(logo.style,logoStyle);
-                    document.querySelector(".placeHolder").style.display = "none";
-                    e.preventDefault();
-                };
-                return reader.readAsDataURL(input.files[0]);
-            }
-        };
-
-
+        const {inputing,uploadLogo,campaignName,language,goalAmount,colorPalette,logoFile,slogan} = this.props
         return (
             <div id="generalSettings">
                 <p className="title">GENERAL SETTINGS</p>
@@ -47,12 +13,12 @@ class GeneralSettings extends Component {
                             <div className="row">
                                 <div className="campaign">
                                     <p htmlFor="text">Campaign name</p>
-                                    <input ref= {this.inputRef} type="text" name="campaignName" value={campaignName} 
-                                    onChange={this.inputing} placeholder="Your campaign name"/>
+                                    <input type="text" name="campaignName" value={campaignName} 
+                                    onChange={inputing} placeholder="Your campaign name"/>
                                 </div>
                                 <div className="language">
                                     <p htmlFor="text">Form Language</p>
-                                    <select value={language} name="language" onChange={this.inputing} 
+                                    <select value={language} name="language" onChange={inputing} 
                                     className="languageInput">
                                         <option>English</option>
                                         <option>French</option>
@@ -69,7 +35,7 @@ class GeneralSettings extends Component {
                                             <option>&euro;</option>
                                         </select> */}
                                         <input type="number" name="goalAmount" value={goalAmount} 
-                                        onChange={this.inputing} placeholder="Goal Amount"/>
+                                        onChange={inputing} placeholder="Goal Amount"/>
                                     </div>
                                     <div className="radio">
                                         <label className="label">
@@ -84,9 +50,9 @@ class GeneralSettings extends Component {
                                 <div className="column widget">
                                     <p>Widget Color</p>
                                     <div className="row">
-                                        <input type="color" value={colorPalette} name="colorPalette" onChange={this.inputing}/>
+                                        <input type="color" value={colorPalette} name="colorPalette" onChange={inputing}/>
                                         <input type="text" className="colorCode" value={colorPalette.toLocaleUpperCase()} 
-                                        name="colorPalette" onChange={this.inputing}></input>
+                                        name="colorPalette" onChange={inputing}></input>
                                     </div>
                                 </div>
                             </div>
@@ -104,7 +70,7 @@ class GeneralSettings extends Component {
                                         <img src="" id="logoDisplay" alt="Upload Logo"/>
                                         <p className="placeHolder"><span>Upload</span> Logo</p>
                                         <input type="file" id="logo" accept="image/gif, image/jpeg, image/jpg, image/png"
-                                        onChange={()=>uploadLogo(this.props.input)}
+                                        onChange={uploadLogo}
                                         placeholder="Upload Logo" value={logoFile} name="logoFile"/>
                                     </div>
                                 </div>
@@ -115,7 +81,7 @@ class GeneralSettings extends Component {
                                     </div>
                                     <div>
                                         <input type="text" id="slogan" value={slogan} name="slogan" 
-                                        onChange={this.inputing} placeholder="Input your slogan"/>
+                                        onChange={inputing} placeholder="Input your slogan"/>
                                     </div>
                                 </div>
                             </div>
@@ -128,4 +94,4 @@ class GeneralSettings extends Component {
     }
 }
 
-export default GeneralSettings
+export default HigherOrderComponent(GeneralSettings)

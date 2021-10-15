@@ -4,23 +4,8 @@ import '../amountInformation/AmountInformation.css'
 
 
 class EmploymentInformation extends Component {
-    constructor(props) {
-        super(props)
-    
-        this.state = {
-            customElement: "",
-            addCustomElement: "+ Add a new custom field",
-        }
-        this.inputing = this.inputing.bind(this);
-    }
-    inputing=(e)=>{
-        this.setState({
-            [e.target.name]: e.target.value
-        });
-    };
-    
     render() {
-        const {customElement,addCustomElement} = this.state
+        const {customElement,addCustomElement,inputing} = this.props
         const customFieldElement=(e)=>{
             if(e.target.name === "addCustomElement"){
                 let ul = document.querySelector("ul#customField")
@@ -72,7 +57,7 @@ class EmploymentInformation extends Component {
                         <ul id="customField" onClick={customFieldElement}>
                             <li id="holder">
                                 <input type="text" name="customElement" value={customElement} 
-                                onChange={this.inputing} placeholder="Enter your field name"/>
+                                onChange={inputing} placeholder="Enter your field name"/>
                                 <span className="delete">
                                     <i className="">&times;</i>
                                 </span>

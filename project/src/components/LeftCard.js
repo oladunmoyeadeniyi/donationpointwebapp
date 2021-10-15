@@ -1,28 +1,15 @@
 import React, { Component } from 'react'
+import HigherOrderComponent from './HOComponent';
 import "../amountInformation/AmountInformation.css"
 import LeftParentAmountInformation from '../amountInformation/LeftParentAmountInformation';
 // import LeftParentDonorInformation from '../donorInformation/LeftParentDonorInformation';
 
 
 class LeftCard extends Component {
-    constructor(props) {
-        super(props)
-        // this.inputRef = React.createRef()
-        this.state = {
-             button: "Next Page"
-        }
-    }
-    // componentDidMount(){
-    //     this.inputRef.current.focus()
-    // }
-    // formSubmmit(e){
-    //     e.preventDefault();
-    // };
-    
     render() {
-        const {button} = this.state
+        const {button,formSubmmit} = this.props
         return (
-            <form id="leftCard" onSubmit={this.formSubmmit}>
+            <form id="leftCard" onSubmit={formSubmmit}>
                 <div className="body">
                     <LeftParentAmountInformation/>
                     {/* <LeftParentDonorInformation/> */}
@@ -39,4 +26,4 @@ class LeftCard extends Component {
     }
 }
 
-export default LeftCard
+export default HigherOrderComponent(LeftCard)

@@ -1,21 +1,9 @@
 import React, { Component } from 'react'
+import HigherOrderComponent from '../components/HOComponent'
 
 class AmountInformation extends Component {
-    constructor(props) {
-        super(props)
-    
-        this.state = {
-            minimumAmount: 290
-        }
-        this.inputing = this.inputing.bind(this)
-    };
-    inputing=(e)=>{
-        this.setState({
-            [e.target.name]: e.target.value
-        });
-    };
     render() {
-        const {minimumAmount} = this.state
+        const {minimumAmount,inputing} = this.props
         
         return (
             <div id="amountInformation">
@@ -37,7 +25,7 @@ class AmountInformation extends Component {
                                 <option>&euro;</option>
                                 </select>
                             </div>   */}
-                            <input type="number" name="minimumAmount" value={minimumAmount} onChange={this.inputing} placeholder="Your campaign name"/>
+                            <input type="number" name="minimumAmount" value={minimumAmount} onChange={inputing} placeholder="Your campaign name"/>
                         </div>
                         <div className="column">
                             <p>Processing fee</p>
@@ -58,4 +46,4 @@ class AmountInformation extends Component {
     }
 }
 
-export default AmountInformation
+export default HigherOrderComponent(AmountInformation)

@@ -8,7 +8,7 @@ class LeftParentAmountInformation extends Component {
     render() {
         return (
             <>
-                <GeneralSettings ref= {this.inputRef}/>
+                <GeneralSettings/>
                 <DonorPreferences/>
                 <AmountInformation/>
                 <ComplianceAndDisclaimer/>

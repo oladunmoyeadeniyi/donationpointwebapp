@@ -1,26 +1,13 @@
 import React, { Component } from 'react'
+import HigherOrderComponent from '../components/HOComponent'
 
 export class CardAmoutInformation extends Component {
-    constructor(props) {
-        super(props)
-    
-        this.state = {
-            amount: 50,
-            comment: "This charity is for me and my family.",
-        }
-        this.inputing = this.inputing.bind(this)
-    }
-    inputing=(e)=>{
-        this.setState({
-            [e.target.name]: e.target.value,
-        });
-    };
     render() {
-        const {amount,comment} = this.state
+        const {inputing,uploadLogo,amount,comment} = this.props
         return (
             <div id="cardAmountInformation">
                 <div>
-                    <img src="" alt="logo" id="logo"/>
+                    <img src="" id="logoDisplay" alt="Upload Logo"/>
                 </div>
                 <p className="slogan">Every penny counts</p>
                 <h1 className="message">Donor service for iftar charity</h1>
@@ -37,7 +24,7 @@ export class CardAmoutInformation extends Component {
                         </select>
                         <div>
                             {/* <input type="button" defaultValue="$"/> */}
-                            <select className="value" value={amount} name="amount" onChange={this.inputing}>
+                            <select className="value" value={amount} name="amount" onChange={inputing}>
                                 <option>50</option>
                                 <option></option>
                                 <option></option>
@@ -50,7 +37,7 @@ export class CardAmoutInformation extends Component {
                             <label>Add comments</label>
                         </div>
                         <div>
-                            <textarea type="text" value={comment} name="comment" onChange={this.inputing}/>
+                            <textarea type="text" value={comment} name="comment" onChange={inputing}/>
                         </div>
                     </div>
                 </main>
@@ -59,4 +46,4 @@ export class CardAmoutInformation extends Component {
     }
 }
 
-export default CardAmoutInformation
+export default HigherOrderComponent(CardAmoutInformation)
